@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+console.log('regular console log');
+    // Interpolated
+console.log('interpolated %s log', 'console')
+    // Styled
+console.log('%c stylish console log','font-family:sans-serif; color:purple')
+    // warning!
+console.warn('console dot warn')
+    // Error :|
+console.error('console dot error')
+    // Info
+console.info('console dot info')
+    // Testing
+console.assert(1===1,'incorrect!');
+console.assert(1===3,'incorrect!');
+    // clearing
+//setTimeout(console.clear,5000);
+    // Viewing DOM Elements
+const p = document.querySelector('p');
+console.log(p);
+console.dir(p);
+    // Grouping together
+dogs.forEach(dog => {
+  console.groupCollapsed(`${dog.name}`); //just 'group' works too (expanded)
+  console.log(`${dog.name} is ${dog.age} years old.`);
+  console.log(`${dog.name} is ${dog.age*7} in dog years.`);
+  console.groupEnd(`${dog.name}`);
+})
+    // counting
+console.count('Snickers');
+console.count('Snickers');
+    // timing
+console.time('fetching data');
+fetch('https://api.github.com/users/lcmaximum').then(info=> info.json())
+.then(data =>{
+  console.timeEnd('fetching data');
+  console.log(data);
+})
+  </script>
+</body>
+</html>
