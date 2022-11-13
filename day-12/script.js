@@ -9,6 +9,7 @@ function easterEgg(e) {
     console.log(pressed);
     if (pressed.join('').includes(secretCode)) {
 secretDiv.innerHTML = "<h1>you win free s'barby's for a year!</h1>";
+cornify_add();
     }
 }
 
