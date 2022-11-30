@@ -27,7 +27,7 @@ ctx.strokeStyle= `hsl(${hue}, 100%, 50%)`;
   lastX = e.offsetX;
   lastY = e.offsetY;
   hue++;
-  if (ctx.lineWidth > 50 || ctx.lineWidth<5) {
+  if (ctx.lineWidth > 40 || ctx.lineWidth<5) {
     direction = !direction;
   }
   if (direction) {
